@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "magic_overhaul:test_block"
+    }
+  ],
+  "result": {
+    "item": "magic_overhaul:debug_wand",
+    "count": 3
+  }
+}
