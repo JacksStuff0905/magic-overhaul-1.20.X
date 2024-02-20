@@ -3,10 +3,8 @@ package net.jacksstuff.magicoverhaul.datagen.loot;
 import net.jacksstuff.magicoverhaul.block.ModBlocks;
 import net.jacksstuff.magicoverhaul.item.ModItems;
 import net.minecraft.data.loot.BlockLootSubProvider;
-import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -20,7 +18,7 @@ import net.minecraftforge.registries.RegistryObject;
 import java.util.Set;
 
 public class ModBlockLootTables extends BlockLootSubProvider {
-    protected ModBlockLootTables(Set<Item> pExplosionResistant, FeatureFlagSet pEnabledFeatures) {
+    public ModBlockLootTables() {
         super(Set.of(), FeatureFlags.REGISTRY.allFlags());
     }
 

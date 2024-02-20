@@ -3,8 +3,8 @@ package net.jacksstuff.magicoverhaul.datagen;
 import net.jacksstuff.magicoverhaul.datagen.loot.ModBlockLootTables;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;
-import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
+
 
 import java.util.List;
 import java.util.Set;
