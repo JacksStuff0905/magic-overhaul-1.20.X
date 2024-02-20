@@ -25,9 +25,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         oreSmelting(consumer, DEBUG_WAND_SMELTABLES, RecipeCategory.MISC, ModItems.DEBUG_WAND.get(), 0.25f, 100, "Debug Wand");
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.TEST_BLOCK.get())
-                .pattern("###")
+                .pattern("   ")
                 .pattern("DDD")
-                .pattern("###")
+                .pattern("   ")
                 .define('D', ModItems.DEBUG_WAND.get())
                 .unlockedBy(getHasName(ModItems.DEBUG_WAND.get()), has(ModItems.DEBUG_WAND.get()))
                 .save(consumer);
