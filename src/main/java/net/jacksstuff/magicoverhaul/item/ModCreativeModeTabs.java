@@ -19,12 +19,16 @@ public class ModCreativeModeTabs {
             .title(Component.translatable("creativetab.magic_tab"))
             .displayItems((pParameters, pOutput) -> {
                 pOutput.accept(ModItems.DEBUG_WAND.get());
+
                 pOutput.accept(ModItems.METAL_DETECTOR.get());
+
                 pOutput.accept(Items.ENCHANTED_BOOK);
 
                 pOutput.accept(ModBlocks.TEST_BLOCK.get());
 
                 pOutput.accept(ModBlocks.TEST_BLOCK_ORE.get());
+
+                pOutput.accept(ModBlocks.SOUND_BLOCK.get());
             })
             .build());
 
