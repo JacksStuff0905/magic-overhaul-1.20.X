@@ -1,6 +1,8 @@
 package net.jacksstuff.magicoverhaul.datagen;
 
 import net.jacksstuff.magicoverhaul.MagicOverhaul;
+import net.jacksstuff.magicoverhaul.item.ModItems;
+import net.jacksstuff.magicoverhaul.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -17,6 +19,6 @@ public class ModItemTagGenerator extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-
+        this.tag(ModTags.Items.RUNES).add(ModItems.RUNE_ACNAR.get());
     }
 }

@@ -20,6 +20,8 @@ public class ModTags {
 
     public static class Items {
 
+        public static final TagKey<Item> RUNES = tag("runes");
+
         private static TagKey<Item> tag(String name) {
             return ItemTags.create(new ResourceLocation(MagicOverhaul.MOD_ID, name));
         }

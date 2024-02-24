@@ -19,6 +19,7 @@ public class ModItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         simpleItem(ModItems.DEBUG_WAND);
         simpleItem(ModItems.METAL_DETECTOR);
+        simpleItem(ModItems.RUNE_ACNAR);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
