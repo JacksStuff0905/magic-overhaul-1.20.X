@@ -19,6 +19,8 @@ public class ModItemTagGenerator extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        this.tag(ModTags.Items.RUNES).add(ModItems.RUNE_ACNAR.get());
+        this.tag(ModTags.Items.RUNES)
+                .add(ModItems.RUNE_ACNAR.get())
+                .add(ModItems.RUNE_BRIMVYORA.get());
     }
 }

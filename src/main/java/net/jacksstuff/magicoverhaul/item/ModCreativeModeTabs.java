@@ -6,7 +6,6 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
@@ -18,12 +17,16 @@ public class ModCreativeModeTabs {
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.DEBUG_WAND.get()))
             .title(Component.translatable("creativetab.magic_tab"))
             .displayItems((pParameters, pOutput) -> {
+                //Items
                 pOutput.accept(ModItems.DEBUG_WAND.get());
 
                 pOutput.accept(ModItems.METAL_DETECTOR.get());
 
-                pOutput.accept(Items.ENCHANTED_BOOK);
+                //Runes
+                pOutput.accept(ModItems.RUNE_ACNAR.get());
+                pOutput.accept(ModItems.RUNE_BRIMVYORA.get());
 
+                //Blocks
                 pOutput.accept(ModBlocks.TEST_BLOCK.get());
 
                 pOutput.accept(ModBlocks.TEST_BLOCK_ORE.get());

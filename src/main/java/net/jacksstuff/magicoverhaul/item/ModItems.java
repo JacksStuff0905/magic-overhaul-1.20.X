@@ -15,7 +15,10 @@ public class ModItems {
 
     public static final RegistryObject<Item> METAL_DETECTOR = ITEMS.register("metal_detector", () -> new MetalDetectorItem(new Item.Properties().durability(100)));
 
+
+    //Runes
     public static final RegistryObject<Item> RUNE_ACNAR = ITEMS.register("rune_acnar", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RUNE_BRIMVYORA = ITEMS.register("rune_brimvyora", () -> new Item(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
