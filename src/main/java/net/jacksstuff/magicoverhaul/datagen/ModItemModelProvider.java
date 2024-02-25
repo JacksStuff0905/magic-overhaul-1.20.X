@@ -19,8 +19,14 @@ public class ModItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         simpleItem(ModItems.DEBUG_WAND);
         simpleItem(ModItems.METAL_DETECTOR);
+
+        //Runes
         simpleItem(ModItems.RUNE_ACNAR);
         simpleItem(ModItems.RUNE_BRIMVYORA);
+        simpleItem(ModItems.RUNE_CASCARIS);
+        simpleItem(ModItems.RUNE_DUSPHOR);
+        simpleItem(ModItems.RUNE_ETHELUX);
+        simpleItem(ModItems.RUNE_FAERD);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

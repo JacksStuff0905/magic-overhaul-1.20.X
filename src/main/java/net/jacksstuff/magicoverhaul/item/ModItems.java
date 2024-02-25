@@ -19,6 +19,10 @@ public class ModItems {
     //Runes
     public static final RegistryObject<Item> RUNE_ACNAR = ITEMS.register("rune_acnar", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> RUNE_BRIMVYORA = ITEMS.register("rune_brimvyora", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RUNE_CASCARIS = ITEMS.register("rune_cascaris", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RUNE_DUSPHOR = ITEMS.register("rune_dusphor", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RUNE_ETHELUX = ITEMS.register("rune_ethelux", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RUNE_FAERD = ITEMS.register("rune_faerd", () -> new Item(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

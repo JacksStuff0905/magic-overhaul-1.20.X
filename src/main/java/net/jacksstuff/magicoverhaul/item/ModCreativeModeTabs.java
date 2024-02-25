@@ -25,6 +25,10 @@ public class ModCreativeModeTabs {
                 //Runes
                 pOutput.accept(ModItems.RUNE_ACNAR.get());
                 pOutput.accept(ModItems.RUNE_BRIMVYORA.get());
+                pOutput.accept(ModItems.RUNE_CASCARIS.get());
+                pOutput.accept(ModItems.RUNE_DUSPHOR.get());
+                pOutput.accept(ModItems.RUNE_ETHELUX.get());
+                pOutput.accept(ModItems.RUNE_FAERD.get());
 
                 //Blocks
                 pOutput.accept(ModBlocks.TEST_BLOCK.get());

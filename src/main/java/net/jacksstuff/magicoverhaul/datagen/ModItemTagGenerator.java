@@ -21,6 +21,11 @@ public class ModItemTagGenerator extends ItemTagsProvider {
     protected void addTags(HolderLookup.Provider provider) {
         this.tag(ModTags.Items.RUNES)
                 .add(ModItems.RUNE_ACNAR.get())
-                .add(ModItems.RUNE_BRIMVYORA.get());
+                .add(ModItems.RUNE_BRIMVYORA.get())
+                .add(ModItems.RUNE_CASCARIS.get())
+                .add(ModItems.RUNE_DUSPHOR.get())
+                .add(ModItems.RUNE_ETHELUX.get())
+                .add(ModItems.RUNE_FAERD.get())
+        ;
     }
 }
