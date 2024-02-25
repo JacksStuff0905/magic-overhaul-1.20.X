@@ -20,7 +20,7 @@ Blackthorn
 Bountis
 Borealix
 Bloodara
-C:
+C: Cascaris
 Celestis
 Cryptalis
 Chronalis
@@ -31,7 +31,7 @@ Celebria
 Calyxara
 Catalystis
 Cascadea
-D:
+D: Dusphor
 Dracarum
 Duskara
 Dreamara
@@ -42,7 +42,7 @@ Dvergaris
 Diamara
 Destinara
 Dynaris
-E:
+E: Ethelux
 Eclipsis
 Enigma
 Ephemara
@@ -53,7 +53,7 @@ Echoara
 Elektara
 Ecliptis
 Everis
-F:
+F: Faerd
 Faelight
 Frostaria
 Flameara
@@ -64,7 +64,7 @@ Ferrosa
 Fyronis
 Fathomis
 Fiorexis
-G:
+G: Galthara
 Galvanis
 Gloomaris
 Glacara
@@ -75,7 +75,7 @@ Gleamara
 Grimoara
 Glimmeris
 Guardianis
-H:
+H: Huxis
 Hallowis
 Hydroth
 Helixara
