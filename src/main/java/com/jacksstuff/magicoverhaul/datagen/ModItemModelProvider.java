@@ -1,7 +1,7 @@
-package net.jacksstuff.magicoverhaul.datagen;
+package com.jacksstuff.magicoverhaul.datagen;
 
-import net.jacksstuff.magicoverhaul.MagicOverhaul;
-import net.jacksstuff.magicoverhaul.item.ModItems;
+import com.jacksstuff.magicoverhaul.MagicOverhaul;
+import com.jacksstuff.magicoverhaul.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -27,6 +27,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.RUNE_DUSPHOR);
         simpleItem(ModItems.RUNE_ETHELUX);
         simpleItem(ModItems.RUNE_FAERD);
+        simpleItem(ModItems.RUNE_GALTHARA);
+        simpleItem(ModItems.RUNE_HUXIS);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

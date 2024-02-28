@@ -1,8 +1,8 @@
-package net.jacksstuff.magicoverhaul.datagen;
+package com.jacksstuff.magicoverhaul.datagen;
 
-import net.jacksstuff.magicoverhaul.MagicOverhaul;
-import net.jacksstuff.magicoverhaul.item.ModItems;
-import net.jacksstuff.magicoverhaul.util.ModTags;
+import com.jacksstuff.magicoverhaul.MagicOverhaul;
+import com.jacksstuff.magicoverhaul.item.ModItems;
+import com.jacksstuff.magicoverhaul.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -26,6 +26,8 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                 .add(ModItems.RUNE_DUSPHOR.get())
                 .add(ModItems.RUNE_ETHELUX.get())
                 .add(ModItems.RUNE_FAERD.get())
+                .add(ModItems.RUNE_GALTHARA.get())
+                .add(ModItems.RUNE_HUXIS.get())
         ;
     }
 }
