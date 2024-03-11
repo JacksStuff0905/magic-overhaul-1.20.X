@@ -86,7 +86,7 @@ Horizonis
 Hymnarra
 Humaris
 Hallowara
-I:
+I: Inqyore
 Infernos
 Illusara
 Invictara
@@ -97,7 +97,7 @@ Icylara
 Inquisara
 Isolara
 Iridesca
-J:
+J: Jurnix
 Jinxaris
 Jadea
 Jubilis
@@ -108,7 +108,7 @@ Joltara
 Jocundara
 Jaggara
 Jivara
-K:
+K: Kymara
 Kyronis
 Kaleidos
 Kyndara
@@ -119,7 +119,7 @@ Kithara
 Kestralis
 Kynara
 Kyberis
-L:
+L:Luxaar
 Luminara
 Lyricis
 Lavaara
@@ -130,7 +130,7 @@ Labyrinthia
 Lumara
 Letharis
 Levitara
-M:
+M: Morstrom
 Mysticara
 Mercuris
 Morpheon
@@ -141,7 +141,7 @@ Mysterion
 Magmaris
 Magellara
 Marvexis
-N:
+N: Nexumis
 Nocturna
 Netheris
 Nebulaara
@@ -152,7 +152,7 @@ Nyxis
 Nexusara
 Nymphara
 Numinara
-O:
+O: Orred
 Omnilis
 Obsidianis
 Oculusara
@@ -163,7 +163,7 @@ Oscillara
 Orendara
 Oasysara
 Orkanis
-P:
+P: Parsinea
 Pyrallis
 Phantara
 Pyxisara
@@ -174,7 +174,7 @@ Pinnacleis
 Pulsara
 Perilis
 Pyxisara
-Q:
+Q: Qaix
 Quasarra
 Quellis
 Quixara
@@ -185,7 +185,7 @@ Quasarix
 Quasith
 Quillara
 Quaintis
-R:
+R: Rhephenis
 Radiaris
 Runicus
 Revenara
@@ -196,8 +196,7 @@ Rosethorn
 Rivenara
 Regalis
 Runeira
-S:
-Sylvanis
+S: Starix
 Shadowra
 Solaris
 Sceptara
@@ -207,7 +206,7 @@ Stormara
 Spectara
 Synthara
 Sableara
-T:
+T: Tudyora
 Thundara
 Twilightis
 Titanis
@@ -218,7 +217,7 @@ Tranceara
 Tenebris
 Typhoonis
 Trystara
-U:
+U: Urots
 Utopis
 Umbrara
 Unityara
@@ -229,7 +228,7 @@ Ultranis
 Ultravara
 Ullithara
 Umbralex
-V:
+V: Valtara
 Vortexis
 Verdantis
 Vesperara
@@ -240,7 +239,7 @@ Vandalis
 Vibraris
 Virenthara
 Vellelis
-W:
+W: Wyste
 Wraithara
 Wondara
 Whisperis
@@ -251,7 +250,7 @@ Wildara
 Wovenara
 Warthara
 Wolvexis
-X:
+X: Xaend
 Xenithis
 Xylogis
 Xerathara
@@ -262,7 +261,7 @@ Xalonis
 Xyris
 Xilithara
 Xultara
-Y:
+Y: Yanrys
 Yggdrara
 Yonderis
 Yorexis
@@ -273,7 +272,7 @@ Yarnara
 Yondara
 Ymiris
 Yuccara
-Z:
+Z: Zaeris
 Zephyris
 Zenithara
 Zaratara
