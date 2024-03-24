@@ -1,9 +1,14 @@
-package net.jacksstuff.magicoverhaul;
+package com.jacksstuff.magicoverhaul;
 
+import com.jacksstuff.magicoverhaul.block.entity.ModBlockEntities;
+import com.jacksstuff.magicoverhaul.screen.ModMenuTypes;
+import com.jacksstuff.magicoverhaul.screen.RuneExtractorScreen;
+import com.jacksstuff.magicoverhaul.screen.SpellCastScreen;
 import com.mojang.logging.LogUtils;
-import net.jacksstuff.magicoverhaul.block.ModBlocks;
-import net.jacksstuff.magicoverhaul.item.ModCreativeModeTabs;
-import net.jacksstuff.magicoverhaul.item.ModItems;
+import com.jacksstuff.magicoverhaul.block.ModBlocks;
+import com.jacksstuff.magicoverhaul.item.ModCreativeModeTabs;
+import com.jacksstuff.magicoverhaul.item.ModItems;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -36,6 +41,9 @@ public class MagicOverhaul
 
         ModBlocks.register(modEventBus);
 
+        ModBlockEntities.register(modEventBus);
+
+        ModMenuTypes.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -63,7 +71,9 @@ public class MagicOverhaul
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event)
     {
+
     }
+
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -72,7 +82,13 @@ public class MagicOverhaul
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
-
+            event.enqueueWork(() -> {
+                MenuScreens.register(ModMenuTypes.RUNE_EXTRACTOR_MENU.get(), RuneExtractorScreen::new);
+                MenuScreens.register(ModMenuTypes.SPELL_CAST_MENU.get(), SpellCastScreen::new);
+                // TODO: Add more later
+            });
         }
     }
+
+
 }

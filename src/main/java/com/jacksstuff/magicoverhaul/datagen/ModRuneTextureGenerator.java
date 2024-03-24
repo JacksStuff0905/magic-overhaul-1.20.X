@@ -1,9 +1,9 @@
-package net.jacksstuff.magicoverhaul.datagen;
+package com.jacksstuff.magicoverhaul.datagen;
 
 
 
 
-import net.jacksstuff.magicoverhaul.MagicOverhaul;
+import com.jacksstuff.magicoverhaul.MagicOverhaul;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -19,8 +19,8 @@ public class ModRuneTextureGenerator {
     //String generated_directory = ".." + File.separator + Path.of("src", "generated", "resources", "assets", MagicOverhaul.MOD_ID, "textures", "item").toString() + File.separator;
 
     static final int IMAGE_SIZE = 16;
-    static final int IMAGE_BLUR_RADIUS = 1;
-    static final float IMAGE_BLUR_OPACITY = 0.7f;
+    static final int IMAGE_BLUR_RADIUS = 3;
+    static final float IMAGE_BLUR_OPACITY = 0.55f;
 
     public ModRuneTextureGenerator (String rune_background_file_name) {
         mergeRuneFiles(rune_background_file_name);
@@ -54,13 +54,17 @@ public class ModRuneTextureGenerator {
                 throw new RuntimeException(e);
             }
         }
-
     }
+
 
 
     static BufferedImage Blur(BufferedImage image, int radius, float opacity){
 
         BufferedImage return_image = new BufferedImage(IMAGE_SIZE, IMAGE_SIZE, BufferedImage.TYPE_INT_ARGB);
+        float slope = 1f;
+        float offset = 0f;
+
+        opacity *= (Average(getAverageColor(image)) / 255) * 2;
 
         float sigma = 1.5f;
         float[][] matrix = new float[(radius * 2 + 1)][(radius * 2 + 1)];
@@ -194,9 +198,9 @@ public class ModRuneTextureGenerator {
         return value;
     }
 
-    static float Average(int[] input) {
+    static float Average(float[] input) {
         float return_value = 0;
-        for (int f : input) {
+        for (float f : input) {
             return_value += f;
         }
         return return_value / input.length;
@@ -204,5 +208,28 @@ public class ModRuneTextureGenerator {
 
     static float Lerp(float a, float b, float f) {
         return a + f * (b - a);
+    }
+
+
+    static float[] getAverageColor(BufferedImage image) {
+        float[] sum = new float[4];
+        int count = 0;
+        for (int x = 0; x < image.getWidth(); x++) {
+            for (int y = 0; y < image.getHeight(); y++) {
+                if (image.getRaster().getPixel(x, y, new float[4])[3] != 0) {
+                    sum[0] += image.getRaster().getPixel(x, y, new float[4])[0];
+                    sum[1] += image.getRaster().getPixel(x, y, new float[4])[1];
+                    sum[2] += image.getRaster().getPixel(x, y, new float[4])[2];
+                    sum[3] += image.getRaster().getPixel(x, y, new float[4])[3];
+                    count++;
+                }
+            }
+        }
+
+        sum[0] /= count;
+        sum[1] /= count;
+        sum[2] /= count;
+        sum[3] /= count;
+        return sum;
     }
 }

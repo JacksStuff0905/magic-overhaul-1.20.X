@@ -29,6 +29,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.RUNE_FAERD);
         simpleItem(ModItems.RUNE_GALTHARA);
         simpleItem(ModItems.RUNE_HUXIS);
+        simpleItem(ModItems.RUNE_INQYORE);
+        simpleItem(ModItems.RUNE_JURNIX);
+        simpleItem(ModItems.RUNE_KYMARA);
+        simpleItem(ModItems.RUNE_LUXAAR);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

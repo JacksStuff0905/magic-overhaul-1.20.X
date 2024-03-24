@@ -18,6 +18,10 @@ public class ModMenuTypes {
     public static final RegistryObject<MenuType<RuneExtractorMenu>> RUNE_EXTRACTOR_MENU =
             registerMenuType("rune_extractor_menu", RuneExtractorMenu::new);
 
+    public static final RegistryObject<MenuType<SpellCastMenu>> SPELL_CAST_MENU =
+            registerMenuType("spell_cast_menu", SpellCastMenu::new);
+
+
     private static <T extends AbstractContainerMenu>RegistryObject<MenuType<T>> registerMenuType(String name, IContainerFactory<T> factory) {
         return MENUS.register(name, () -> IForgeMenuType.create(factory));
     }

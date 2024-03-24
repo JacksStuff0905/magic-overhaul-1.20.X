@@ -1,7 +1,7 @@
-package net.jacksstuff.magicoverhaul.item;
+package com.jacksstuff.magicoverhaul.item;
 
-import net.jacksstuff.magicoverhaul.MagicOverhaul;
-import net.jacksstuff.magicoverhaul.block.ModBlocks;
+import com.jacksstuff.magicoverhaul.MagicOverhaul;
+import com.jacksstuff.magicoverhaul.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -14,7 +14,7 @@ public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MagicOverhaul.MOD_ID);
 
     public static final RegistryObject<CreativeModeTab> MAGIC_TAB = CREATIVE_MODE_TABS.register("magic_tab",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.DEBUG_WAND.get()))
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.RUNE_ACNAR.get()))
             .title(Component.translatable("creativetab.magic_tab"))
             .displayItems((pParameters, pOutput) -> {
                 //Items
@@ -29,6 +29,13 @@ public class ModCreativeModeTabs {
                 pOutput.accept(ModItems.RUNE_DUSPHOR.get());
                 pOutput.accept(ModItems.RUNE_ETHELUX.get());
                 pOutput.accept(ModItems.RUNE_FAERD.get());
+                pOutput.accept(ModItems.RUNE_GALTHARA.get());
+                pOutput.accept(ModItems.RUNE_HUXIS.get());
+                pOutput.accept(ModItems.RUNE_INQYORE.get());
+                pOutput.accept(ModItems.RUNE_JURNIX.get());
+                pOutput.accept(ModItems.RUNE_KYMARA.get());
+                pOutput.accept(ModItems.RUNE_LUXAAR.get());
+
 
                 //Blocks
                 pOutput.accept(ModBlocks.TEST_BLOCK.get());
@@ -36,6 +43,8 @@ public class ModCreativeModeTabs {
                 pOutput.accept(ModBlocks.TEST_BLOCK_ORE.get());
 
                 pOutput.accept(ModBlocks.SOUND_BLOCK.get());
+
+                pOutput.accept(ModBlocks.RUNE_EXTRACTOR.get());
             })
             .build());
 

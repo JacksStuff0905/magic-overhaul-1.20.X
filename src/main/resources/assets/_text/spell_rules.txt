@@ -1,0 +1,20 @@
+Spell casting rules:
+
+Terminology:
+    - result = an array of instances of the Spell class (generated with the SpellResult.CalculateResult() function)
+    - effect type = an enum of type EffectType defined in the SpellEffect class
+    - effect pair = a pair of two effects - one being of type MODE and one of type EFFECT that have the same spell level assigned
+    - valid result = the result is completely made up of only effect pairs (e.g. Fire 2, Ray 2, Ice 1, Charge 1)
+    - partial result = the result is made out of at least one effect pair (e.g. Thunder 1, Dome 2, Void 3, Wave 3)
+    - invalid result = the result does not contain any effect pairs (e.g. Air 2, Storm 1, Earth 3)
+        OR there are more than two effects in the same pair (e.g. Air 2, Charge 2, Earth 2)
+        OR both of effects in the pair are either MODE or EFFECT (e.g. Fire 1, Ray 1, Air 2, Thunder 2)
+
+1. If the spell result is a valid result:
+    The spell will be cast in a regular order.
+
+2. If the spell result is a partial result:
+    The spell will not be cast (particle indicators will be shown instead).
+
+3. If the spell result is an invalid result:
+    The spell will not be cast and all runes involved in the spell will be removed (broken) from the inventory.

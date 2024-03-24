@@ -2,12 +2,18 @@ package com.jacksstuff.magicoverhaul.datagen;
 
 import com.jacksstuff.magicoverhaul.MagicOverhaul;
 import com.jacksstuff.magicoverhaul.item.ModItems;
+import com.jacksstuff.magicoverhaul.item.custom.RuneItem;
 import com.jacksstuff.magicoverhaul.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
@@ -19,15 +25,11 @@ public class ModItemTagGenerator extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        this.tag(ModTags.Items.RUNES)
-                .add(ModItems.RUNE_ACNAR.get())
-                .add(ModItems.RUNE_BRIMVYORA.get())
-                .add(ModItems.RUNE_CASCARIS.get())
-                .add(ModItems.RUNE_DUSPHOR.get())
-                .add(ModItems.RUNE_ETHELUX.get())
-                .add(ModItems.RUNE_FAERD.get())
-                .add(ModItems.RUNE_GALTHARA.get())
-                .add(ModItems.RUNE_HUXIS.get())
-        ;
+        var runesTag = this.tag(ModTags.Items.RUNES);
+        for (Item item : ForgeRegistries.ITEMS.getValues()) {
+            if (item instanceof RuneItem runeItem) {
+                runesTag.add(runeItem);
+            }
+        }
     }
 }

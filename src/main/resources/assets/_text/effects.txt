@@ -1,0 +1,30 @@
+Rules:
+    Effects add up (e.g. Fire 2, Air 1)
+    Modes apply to the effects of the same count (e.g. Charge 2, Ray 1 -> the effect will be Fire Charge + Air Ray)
+
+Effects:
+    1.Fire
+    2.Air
+    3.Earth
+        4.Ice
+        5.Void
+        6.Thunder
+
+Modes:
+    7.Charge
+    8.Bolt
+    9.Dome
+        10.Storm
+        11.Ray
+        12.Wave
+
+
+
+
+
+
+
+Runes:
+    A: (1, 8)       (10, 6, 2)
+    B: (2, 1, 7)    (5, 6, 8)
+    C: (7, 5, 6)    (3, 12)

@@ -1,6 +1,6 @@
-package net.jacksstuff.magicoverhaul.util;
+package com.jacksstuff.magicoverhaul.util;
 
-import net.jacksstuff.magicoverhaul.MagicOverhaul;
+import com.jacksstuff.magicoverhaul.MagicOverhaul;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;

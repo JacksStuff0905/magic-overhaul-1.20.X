@@ -1,10 +1,12 @@
-package net.jacksstuff.magicoverhaul.datagen;
+package com.jacksstuff.magicoverhaul.datagen;
 
 
-import net.jacksstuff.magicoverhaul.MagicOverhaul;
+import com.jacksstuff.magicoverhaul.MagicOverhaul;
+import com.jacksstuff.magicoverhaul.spell.ModEffects;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -34,6 +36,9 @@ public class DataGenerators {
         generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));
 
         //Rune generator
+        new ModEffects();
         ModRuneTextureGenerator runeTextureGenerator = new ModRuneTextureGenerator("rune_background.png");
+        RuneEffectCombinationGenerator combinationGenerator = new RuneEffectCombinationGenerator();
+
     }
 }
