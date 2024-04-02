@@ -6,16 +6,17 @@ Effects:
     1.Fire
     2.Air
     3.Earth
-        4.Ice
-        5.Void
-        6.Thunder
+    4.Water
+        5.Ice
+        6.Void
+        7.Thunder
 
 Modes:
     7.Charge
     8.Bolt
     9.Dome
-        10.Storm
-        11.Ray
+    10.Ray
+        11.Storm
         12.Wave
 
 
