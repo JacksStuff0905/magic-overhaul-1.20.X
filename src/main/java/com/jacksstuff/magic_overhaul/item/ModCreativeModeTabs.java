@@ -1,7 +1,7 @@
-package com.jacksstuff.magicoverhaul.item;
+package com.jacksstuff.magic_overhaul.item;
 
-import com.jacksstuff.magicoverhaul.MagicOverhaul;
-import com.jacksstuff.magicoverhaul.block.ModBlocks;
+import com.jacksstuff.magic_overhaul.MagicOverhaul;
+import com.jacksstuff.magic_overhaul.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -18,23 +18,14 @@ public class ModCreativeModeTabs {
             .title(Component.translatable("creativetab.magic_tab"))
             .displayItems((pParameters, pOutput) -> {
                 //Items
-                pOutput.accept(ModItems.DEBUG_WAND.get());
+
+                //Wands
+                ModItems.forEachWand(pOutput::accept);
 
                 pOutput.accept(ModItems.METAL_DETECTOR.get());
 
                 //Runes
-                pOutput.accept(ModItems.RUNE_ACNAR.get());
-                pOutput.accept(ModItems.RUNE_BRIMVYORA.get());
-                pOutput.accept(ModItems.RUNE_CASCARIS.get());
-                pOutput.accept(ModItems.RUNE_DUSPHOR.get());
-                pOutput.accept(ModItems.RUNE_ETHELUX.get());
-                pOutput.accept(ModItems.RUNE_FAERD.get());
-                pOutput.accept(ModItems.RUNE_GALTHARA.get());
-                pOutput.accept(ModItems.RUNE_HUXIS.get());
-                pOutput.accept(ModItems.RUNE_INQYORE.get());
-                pOutput.accept(ModItems.RUNE_JURNIX.get());
-                pOutput.accept(ModItems.RUNE_KYMARA.get());
-                pOutput.accept(ModItems.RUNE_LUXAAR.get());
+                ModItems.forEachRune(pOutput::accept);
 
 
                 //Blocks
@@ -50,6 +41,5 @@ public class ModCreativeModeTabs {
 
     public static void register(IEventBus eventBus) {
         CREATIVE_MODE_TABS.register(eventBus);
-
     }
 }

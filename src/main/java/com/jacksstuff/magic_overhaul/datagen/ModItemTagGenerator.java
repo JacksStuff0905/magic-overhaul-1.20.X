@@ -1,18 +1,16 @@
-package com.jacksstuff.magicoverhaul.datagen;
+package com.jacksstuff.magic_overhaul.datagen;
 
-import com.jacksstuff.magicoverhaul.MagicOverhaul;
-import com.jacksstuff.magicoverhaul.item.ModItems;
-import com.jacksstuff.magicoverhaul.item.custom.RuneItem;
-import com.jacksstuff.magicoverhaul.util.ModTags;
+import com.jacksstuff.magic_overhaul.MagicOverhaul;
+import com.jacksstuff.magic_overhaul.item.ModItems;
+import com.jacksstuff.magic_overhaul.item.custom.AbstractWandItem;
+import com.jacksstuff.magic_overhaul.item.custom.RuneItem;
+import com.jacksstuff.magic_overhaul.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.Nullable;
 
@@ -25,11 +23,14 @@ public class ModItemTagGenerator extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
+
+        //Runes
         var runesTag = this.tag(ModTags.Items.RUNES);
-        for (Item item : ForgeRegistries.ITEMS.getValues()) {
-            if (item instanceof RuneItem runeItem) {
-                runesTag.add(runeItem);
-            }
-        }
+        ModItems.forEachRune(runesTag::add);
+
+        //Wands
+        var wandsTag = this.tag(ModTags.Items.WANDS);
+        ModItems.forEachWand(wandsTag::add);
+
     }
 }

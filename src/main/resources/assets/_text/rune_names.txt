@@ -217,7 +217,7 @@ Tranceara
 Tenebris
 Typhoonis
 Trystara
-U: Urots
+U: Urots XXXXXX
 Utopis
 Umbrara
 Unityara
@@ -239,7 +239,7 @@ Vandalis
 Vibraris
 Virenthara
 Vellelis
-W: Wyste
+W: Wyste XXXXXXX
 Wraithara
 Wondara
 Whisperis

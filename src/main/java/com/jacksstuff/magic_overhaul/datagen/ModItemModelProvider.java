@@ -1,7 +1,7 @@
-package com.jacksstuff.magicoverhaul.datagen;
+package com.jacksstuff.magic_overhaul.datagen;
 
-import com.jacksstuff.magicoverhaul.MagicOverhaul;
-import com.jacksstuff.magicoverhaul.item.ModItems;
+import com.jacksstuff.magic_overhaul.MagicOverhaul;
+import com.jacksstuff.magic_overhaul.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -17,7 +17,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        simpleItem(ModItems.DEBUG_WAND);
+        handheldItem(ModItems.DEBUG_WAND);
         simpleItem(ModItems.METAL_DETECTOR);
 
         //Runes
@@ -33,6 +33,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.RUNE_JURNIX);
         simpleItem(ModItems.RUNE_KYMARA);
         simpleItem(ModItems.RUNE_LUXAAR);
+        simpleItem(ModItems.RUNE_MORSTROM);
+        simpleItem(ModItems.RUNE_NEXUMIS);
+        simpleItem(ModItems.RUNE_ORRED);
+        simpleItem(ModItems.RUNE_PARSINEA);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
@@ -40,4 +44,13 @@ public class ModItemModelProvider extends ItemModelProvider {
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(MagicOverhaul.MOD_ID, "item/" + item.getId().getPath()));
     }
+
+
+    private ItemModelBuilder handheldItem(RegistryObject<Item> item) {
+        return withExistingParent(item.getId().getPath(),
+                new ResourceLocation("item/handheld")).texture("layer0",
+                new ResourceLocation(MagicOverhaul.MOD_ID, "item/" + item.getId().getPath()));
+    }
+
+
 }

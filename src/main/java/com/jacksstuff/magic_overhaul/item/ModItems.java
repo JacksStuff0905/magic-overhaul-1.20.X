@@ -1,17 +1,19 @@
-package com.jacksstuff.magicoverhaul.item;
+package com.jacksstuff.magic_overhaul.item;
 
-import com.jacksstuff.magicoverhaul.MagicOverhaul;
-import com.jacksstuff.magicoverhaul.datagen.RuneEffectCombinationGenerator;
-import com.jacksstuff.magicoverhaul.item.custom.DebugWandItem;
-import com.jacksstuff.magicoverhaul.item.custom.MetalDetectorItem;
-import com.jacksstuff.magicoverhaul.item.custom.RuneItem;
-import com.jacksstuff.magicoverhaul.spell.ModEffects;
-import com.jacksstuff.magicoverhaul.spell.util.SpellEffect;
+import com.jacksstuff.magic_overhaul.MagicOverhaul;
+import com.jacksstuff.magic_overhaul.item.custom.AbstractWandItem;
+import com.jacksstuff.magic_overhaul.item.custom.DebugWandItem;
+import com.jacksstuff.magic_overhaul.item.custom.MetalDetectorItem;
+import com.jacksstuff.magic_overhaul.item.custom.RuneItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Supplier;
 
 public class ModItems {
 
@@ -21,9 +23,11 @@ public class ModItems {
 
 
 
-    public static final RegistryObject<Item> DEBUG_WAND = ITEMS.register("debug_wand", () -> new DebugWandItem(new Item.Properties()));
+    public static final RegistryObject<Item> DEBUG_WAND = ITEMS.register("debug_wand",
+            () -> new DebugWandItem(new Item.Properties()));
 
-    public static final RegistryObject<Item> METAL_DETECTOR = ITEMS.register("metal_detector", () -> new MetalDetectorItem(new Item.Properties().durability(100)));
+    public static final RegistryObject<Item> METAL_DETECTOR = ITEMS.register("metal_detector",
+            () -> new MetalDetectorItem(new Item.Properties().durability(100)));
 
 
     //Runes
@@ -40,6 +44,10 @@ public class ModItems {
     public static final RegistryObject<Item> RUNE_JURNIX = ITEMS.register("rune_jurnix", () -> new RuneItem("rune_jurnix", new Item.Properties()));
     public static final RegistryObject<Item> RUNE_KYMARA = ITEMS.register("rune_kymara", () -> new RuneItem("rune_kymara", new Item.Properties()));
     public static final RegistryObject<Item> RUNE_LUXAAR = ITEMS.register("rune_luxaar", () -> new RuneItem("rune_luxaar", new Item.Properties()));
+    public static final RegistryObject<Item> RUNE_MORSTROM = ITEMS.register("rune_morstrom", () -> new RuneItem("rune_morstrom", new Item.Properties()));
+    public static final RegistryObject<Item> RUNE_NEXUMIS = ITEMS.register("rune_nexumis", () -> new RuneItem("rune_nexumis", new Item.Properties()));
+    public static final RegistryObject<Item> RUNE_ORRED = ITEMS.register("rune_orred", () -> new RuneItem("rune_orred", new Item.Properties()));
+    public static final RegistryObject<Item> RUNE_PARSINEA = ITEMS.register("rune_parsinea", () -> new RuneItem("rune_parsinea", new Item.Properties()));
 
 
     public static void register(IEventBus eventBus) {
@@ -47,4 +55,21 @@ public class ModItems {
     }
 
 
+
+    public static void forEachRune(Consumer<RuneItem> function) {
+        for (Item item : ForgeRegistries.ITEMS) {
+            if (item instanceof RuneItem runeItem) {
+                function.accept(runeItem);
+            }
+        }
+    }
+
+
+    public static void forEachWand(Consumer<AbstractWandItem> function) {
+        for (Item item : ForgeRegistries.ITEMS) {
+            if (item instanceof AbstractWandItem wandItem) {
+                function.accept(wandItem);
+            }
+        }
+    }
 }
