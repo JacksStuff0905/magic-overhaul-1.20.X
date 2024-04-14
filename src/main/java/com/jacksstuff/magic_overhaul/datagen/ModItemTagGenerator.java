@@ -28,6 +28,10 @@ public class ModItemTagGenerator extends ItemTagsProvider {
         var runesTag = this.tag(ModTags.Items.RUNES);
         ModItems.forEachRune(runesTag::add);
 
+        //Rune templates
+        var runeTemplatesTag = this.tag(ModTags.Items.RUNE_TEMPLATES);
+        ModItems.forEachRuneTemplate(runeTemplatesTag::add);
+
         //Wands
         var wandsTag = this.tag(ModTags.Items.WANDS);
         ModItems.forEachWand(wandsTag::add);

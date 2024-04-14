@@ -1,10 +1,7 @@
 package com.jacksstuff.magic_overhaul.item;
 
 import com.jacksstuff.magic_overhaul.MagicOverhaul;
-import com.jacksstuff.magic_overhaul.item.custom.AbstractWandItem;
-import com.jacksstuff.magic_overhaul.item.custom.DebugWandItem;
-import com.jacksstuff.magic_overhaul.item.custom.MetalDetectorItem;
-import com.jacksstuff.magic_overhaul.item.custom.RuneItem;
+import com.jacksstuff.magic_overhaul.item.custom.*;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -31,7 +28,6 @@ public class ModItems {
 
 
     //Runes
-
     public static final RegistryObject<Item> RUNE_ACNAR = ITEMS.register("rune_acnar", () -> new RuneItem("rune_acnar", new Item.Properties()));
     public static final RegistryObject<Item> RUNE_BRIMVYORA = ITEMS.register("rune_brimvyora", () -> new RuneItem("rune_brimvyora", new Item.Properties()));
     public static final RegistryObject<Item> RUNE_CASCARIS = ITEMS.register("rune_cascaris", () -> new RuneItem("rune_cascaris", new Item.Properties()));
@@ -50,6 +46,10 @@ public class ModItems {
     public static final RegistryObject<Item> RUNE_PARSINEA = ITEMS.register("rune_parsinea", () -> new RuneItem("rune_parsinea", new Item.Properties()));
 
 
+    //Rune schematics
+    public static final RegistryObject<Item> RUNE_TEMPLATE_ACNAR = ITEMS.register("rune_template_acnar", () -> new RuneTemplateItem((RuneItem) ModItems.RUNE_ACNAR.get(), new Item.Properties()));
+    public static final RegistryObject<Item> RUNE_TEMPLATE_BRIMVYORA = ITEMS.register("rune_template_brimvyora", () -> new RuneTemplateItem((RuneItem) ModItems.RUNE_BRIMVYORA.get(), new Item.Properties()));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
@@ -60,6 +60,14 @@ public class ModItems {
         for (Item item : ForgeRegistries.ITEMS) {
             if (item instanceof RuneItem runeItem) {
                 function.accept(runeItem);
+            }
+        }
+    }
+
+    public static void forEachRuneTemplate(Consumer<RuneTemplateItem> function) {
+        for (Item item : ForgeRegistries.ITEMS) {
+            if (item instanceof RuneTemplateItem runeTemplateItem) {
+                function.accept(runeTemplateItem);
             }
         }
     }

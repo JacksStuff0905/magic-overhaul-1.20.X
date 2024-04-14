@@ -162,7 +162,7 @@ public class RuneEffectCombinationGenerator {
         Path output_path = PATH;
 
         for (int i = 0; i < list.size(); i++) {
-            String name = getAllRuneItems()[i].name;
+            String name = getAllRuneItems()[i].getStringName();
             File file = new File(output_path.toString() + File.separator + File.separator + name + ".json");
 
             try {

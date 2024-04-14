@@ -1,6 +1,6 @@
-package net.jacksstuff.magicoverhaul.datagen;
+package com.jacksstuff.magic_overhaul.datagen;
 
-import net.jacksstuff.magicoverhaul.datagen.loot.ModBlockLootTables;
+import com.jacksstuff.magic_overhaul.datagen.loot.ModBlockLootTables;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;

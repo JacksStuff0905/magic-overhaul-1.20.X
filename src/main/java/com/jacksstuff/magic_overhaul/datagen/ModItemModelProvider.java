@@ -37,6 +37,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.RUNE_NEXUMIS);
         simpleItem(ModItems.RUNE_ORRED);
         simpleItem(ModItems.RUNE_PARSINEA);
+
+        //Rune templates
+        simpleItem(ModItems.RUNE_TEMPLATE_ACNAR);
+        simpleItem(ModItems.RUNE_TEMPLATE_BRIMVYORA);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

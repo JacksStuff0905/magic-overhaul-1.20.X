@@ -21,6 +21,7 @@ public class ModTags {
     public static class Items {
 
         public static final TagKey<Item> RUNES = tag("runes");
+        public static final TagKey<Item> RUNE_TEMPLATES = tag("rune_templates");
         public static final TagKey<Item> WANDS = tag("wands");
 
         private static TagKey<Item> tag(String name) {
