@@ -1,23 +1,15 @@
-package com.jacksstuff.magicoverhaul.block.entity;
+package com.jacksstuff.magic_overhaul.block.entity;
 
-import com.jacksstuff.magicoverhaul.MagicOverhaul;
-import com.jacksstuff.magicoverhaul.block.entity.util.TickableBlockEntity;
-import com.jacksstuff.magicoverhaul.screen.RuneExtractorMenu;
+import com.jacksstuff.magic_overhaul.MagicOverhaul;
+import com.jacksstuff.magic_overhaul.screen.RuneInscriberMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.Connection;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.protocol.Packet;
-import net.minecraft.network.protocol.game.ClientGamePacketListener;
-import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.ContainerData;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
@@ -29,15 +21,15 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 
-public class RuneExtractorBlockEntity extends BlockEntity implements MenuProvider {
+public class RuneInscriberBlockEntity extends BlockEntity implements MenuProvider {
 
-    public static final Component TITLE = Component.translatable("container." + MagicOverhaul.MOD_ID + ".rune_extractor");
+    public static final Component TITLE = Component.translatable("container." + MagicOverhaul.MOD_ID + ".rune_inscriber");
 
     private final ItemStackHandler inventory = new ItemStackHandler(27) {
         @Override
         protected void onContentsChanged(int slot) {
             super.onContentsChanged(slot);
-            RuneExtractorBlockEntity.this.setChanged();
+            RuneInscriberBlockEntity.this.setChanged();
         }
     };
 
@@ -45,14 +37,8 @@ public class RuneExtractorBlockEntity extends BlockEntity implements MenuProvide
 
 
 
-    private int counter;
-
-    //use when there's progress
-    //private int progress = 0;
-    //private int maxProgress = 78;
-
-    public RuneExtractorBlockEntity(BlockPos pPos, BlockState pBlockState) {
-        super(ModBlockEntities.RUNE_EXTRACTOR_BE.get(), pPos, pBlockState);
+    public RuneInscriberBlockEntity(BlockPos pPos, BlockState pBlockState) {
+        super(ModBlockEntities.RUNE_INSCRIBER_BE.get(), pPos, pBlockState);
     }
 
     @Override
@@ -78,7 +64,6 @@ public class RuneExtractorBlockEntity extends BlockEntity implements MenuProvide
         if (cap == ForgeCapabilities.ITEM_HANDLER) {
             return this.optional.cast();
         }
-
         return super.getCapability(cap);
     }
 
@@ -92,33 +77,10 @@ public class RuneExtractorBlockEntity extends BlockEntity implements MenuProvide
         return this.inventory;
     }
 
-    /*
-    public ItemStack getStackInSlot(int slot) {
-        return this.inventory.getStackInSlot(slot);
-    }
-
-    public void setStackInSlot(int slot, ItemStack stack) {
-        this.inventory.setStackInSlot(slot, stack);
-    }
-    */
     public LazyOptional<IItemHandler> getOptional() {
         return this.optional;
     }
 
-    /*
-    @Override
-    public CompoundTag getUpdateTag() {
-        CompoundTag nbt = super.getUpdateTag();
-        saveAdditional(nbt);
-        return nbt;
-    }
-
-    @Nullable
-    @Override
-    public Packet<ClientGamePacketListener> getUpdatePacket() {
-        return ClientboundBlockEntityDataPacket.create(this);
-    }
-    */
 
     @Override
     public Component getDisplayName() {
@@ -128,22 +90,7 @@ public class RuneExtractorBlockEntity extends BlockEntity implements MenuProvide
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int i, Inventory inventory, Player player) {
-        return new RuneExtractorMenu(i, inventory, this);
+        return new RuneInscriberMenu(i, inventory, this);
     }
 
-    /*@Override
-    public void tick() {
-        if (this.level == null || this.level.isClientSide())
-            return;
-
-        this.counter++;
-        setChanged();
-        this.level.sendBlockUpdated(this.worldPosition, getBlockState(), getBlockState(), Block.UPDATE_ALL);
-    }
-
-
-
-    public int getCounter() {
-        return counter;
-    }*/
 }

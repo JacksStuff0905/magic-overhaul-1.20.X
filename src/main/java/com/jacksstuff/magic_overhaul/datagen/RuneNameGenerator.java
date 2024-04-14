@@ -5,9 +5,8 @@ import com.google.gson.GsonBuilder;
 import com.jacksstuff.magic_overhaul.MagicOverhaul;
 import com.jacksstuff.magic_overhaul.item.ModItems;
 import com.jacksstuff.magic_overhaul.item.custom.RuneItem;
-import net.minecraft.network.chat.Component;
+import com.jacksstuff.magic_overhaul.item.custom.RuneTemplateItem;
 
-import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -31,18 +30,17 @@ public class RuneNameGenerator {
 
 
     public void generateRuneTranslations() {
-
-        HashMap<String, String> tmp = new HashMap<>(Map.of("abcd", "efgh", "ijkl", "1234"));
-        System.out.println("jsoned: " + gson.toJson(tmp));
-
-        generateTranslation("en_us");
+        for (File file : new File(LANG_FOLDER_PATH.toString()).listFiles())
+            generateTranslation(file.getName().replaceAll("\\.json", ""));
     }
 
 
 
     public void generateTranslation(String language) {
         ArrayList<RuneItem> runes = new ArrayList<>();
+        ArrayList<RuneTemplateItem> runeTemplates = new ArrayList<>();
         ModItems.forEachRune(runes::add);
+        ModItems.forEachRuneTemplate(runeTemplates::add);
         System.out.println("path: " + LANG_FOLDER_PATH.toString() + File.separator + language + ".json");
         File file = new File(LANG_FOLDER_PATH.toString() + File.separator + language + ".json");
 
@@ -85,19 +83,33 @@ public class RuneNameGenerator {
 
 
             OUTER_LOOP : for (int i = 0; i < runes.size(); i++) {
-                String name = runes.get(i).name.replaceAll("rune_", "");
+                String name = runes.get(i).getStringName().replaceAll("rune_", "");
                 name = name.substring(0, 1).toUpperCase() + name.substring(1);
-                String entryKey = "  \"" + RUNE_ENTRY + runes.get(i).name + "\":\"";
+                String entryKey = "  \"" + RUNE_ENTRY + runes.get(i).getStringName() + "\":\"";
                 String entry = entryKey + hashMap.get(RUNE_ENTRY + "rune.prefix") + name + hashMap.get(RUNE_ENTRY + "rune.suffix") + "\"";
+
+                String templateEntryKey = "";
+                String templateEntry = "";
+                if (runeTemplates.size() > i) {
+                    templateEntryKey = "  \"" + RUNE_ENTRY + runeTemplates.get(i).getStringName() + "\":\"";
+                    templateEntry = templateEntryKey + hashMap.get(RUNE_ENTRY + "rune_template.prefix") + hashMap.get(RUNE_ENTRY + "rune.prefix") + name + hashMap.get(RUNE_ENTRY + "rune.suffix") + hashMap.get(RUNE_ENTRY + "rune_template.suffix") + "\"";
+                }
+                boolean r = true;
+                boolean t = true;
                 for (String line : lines) {
                     if (line.startsWith(entryKey)) {
-                        continue OUTER_LOOP;
+                        r = false;
+                    }
+                    if ((templateEntryKey.equals("") || line.startsWith(templateEntryKey))) {
+                        t = false;
                     }
                 }
-                lines.add(suffixLineIndex + i + 1, entry);
+                if (r)
+                    lines.add(suffixLineIndex + i * 2 + 1, entry);
+                if (t)
+                    lines.add(suffixLineIndex + i * 2 + 2, templateEntry);
             }
 
-            System.out.println("stored: " + ", " + content);
 
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);

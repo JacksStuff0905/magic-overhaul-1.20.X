@@ -1,15 +1,14 @@
-package net.jacksstuff.magicoverhaul.datagen;
+package com.jacksstuff.magic_overhaul.datagen;
 
-import net.jacksstuff.magicoverhaul.MagicOverhaul;
-import net.jacksstuff.magicoverhaul.block.ModBlocks;
-import net.jacksstuff.magicoverhaul.util.ModTags;
+import com.jacksstuff.magic_overhaul.MagicOverhaul;
+import com.jacksstuff.magic_overhaul.block.ModBlocks;
+import com.jacksstuff.magic_overhaul.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;

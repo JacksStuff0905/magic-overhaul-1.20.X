@@ -1,9 +1,9 @@
-package com.jacksstuff.magicoverhaul.datagen;
+package com.jacksstuff.magic_overhaul.datagen;
 
-import com.jacksstuff.magicoverhaul.MagicOverhaul;
-import com.jacksstuff.magicoverhaul.block.ModBlocks;
-import com.jacksstuff.magicoverhaul.item.ModItems;
-import com.jacksstuff.magicoverhaul.recipe.RuneExtractorRecipe;
+import com.jacksstuff.magic_overhaul.MagicOverhaul;
+import com.jacksstuff.magic_overhaul.block.ModBlocks;
+import com.jacksstuff.magic_overhaul.item.ModItems;
+import com.jacksstuff.magic_overhaul.recipe.RuneInscribingRecipe;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.crafting.*;
@@ -12,7 +12,6 @@ import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 
 import java.util.Iterator;
 import java.util.List;
-import java.util.function.Consumer;
 
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
     private static final List<ItemLike> DEBUG_WAND_SMELTABLES = List.of(ModBlocks.TEST_BLOCK_ORE.get()); //make a list of ingredients that can be smelted to a single item
@@ -33,6 +32,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('D', ModItems.DEBUG_WAND.get())
                 .unlockedBy(getHasName(ModItems.DEBUG_WAND.get()), has(ModItems.DEBUG_WAND.get()))
                 .save(recipeOutput);
+
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.DEBUG_WAND.get(), 9)
                 .requires(ModBlocks.TEST_BLOCK.get())
@@ -62,7 +62,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     }
 
-    protected static void runeExtraction(RecipeOutput recipeOutput, RecipeSerializer<? extends RuneExtractorRecipe> extractionSerializer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTime, String pGroup, String pRecipeName) {
+    protected static void runeInscribing(RecipeOutput recipeOutput, RecipeSerializer<? extends RuneInscribingRecipe> extractionSerializer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTime, String pGroup, String pRecipeName) {
         Iterator iterator = pIngredients.iterator();
         /*
         while(iterator.hasNext()) {

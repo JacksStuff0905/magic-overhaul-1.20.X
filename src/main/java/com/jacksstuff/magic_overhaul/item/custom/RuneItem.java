@@ -1,5 +1,6 @@
 package com.jacksstuff.magic_overhaul.item.custom;
 
+import com.jacksstuff.magic_overhaul.MagicOverhaul;
 import com.jacksstuff.magic_overhaul.datagen.RuneEffectCombinationGenerator;
 import com.jacksstuff.magic_overhaul.spell.util.RuneEffects;
 import com.jacksstuff.magic_overhaul.spell.util.SpellEffect;
@@ -7,6 +8,7 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
@@ -15,19 +17,24 @@ import java.util.List;
 
 public class RuneItem extends Item {
     private RuneEffects EFFECTS;
-    public final String name;
+    private final String name;
+
+
+    public String getStringName() {
+        return name;
+    }
 
 
     public RuneItem(String name, Properties pProperties) {
-        super(pProperties.stacksTo(1));
+        super(pProperties.stacksTo(1).rarity(Rarity.EPIC));
         this.name = name;
         EFFECTS = RuneEffectCombinationGenerator.getEffectsFromJSON(name);
     }
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("tooltip.magic_overhaul.rune_item_effects.tooltip")
-                .withStyle(ChatFormatting.LIGHT_PURPLE));
+        pTooltipComponents.add(Component.translatable("tooltip." + MagicOverhaul.MOD_ID + ".rune_item_effects.tooltip")
+                .withStyle(ChatFormatting.AQUA));
         for (SpellEffect effect : EFFECTS.positiveEffects) {
             pTooltipComponents.add(
                     Component.literal(" + " + effect.getDisplayName())

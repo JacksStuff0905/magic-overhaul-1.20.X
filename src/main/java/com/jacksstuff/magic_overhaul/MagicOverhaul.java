@@ -1,8 +1,9 @@
 package com.jacksstuff.magic_overhaul;
 
 import com.jacksstuff.magic_overhaul.block.entity.ModBlockEntities;
+import com.jacksstuff.magic_overhaul.recipe.ModRecipes;
 import com.jacksstuff.magic_overhaul.screen.ModMenuTypes;
-import com.jacksstuff.magic_overhaul.screen.RuneExtractorScreen;
+import com.jacksstuff.magic_overhaul.screen.RuneInscriberScreen;
 import com.jacksstuff.magic_overhaul.screen.SpellCastScreen;
 import com.mojang.logging.LogUtils;
 import com.jacksstuff.magic_overhaul.block.ModBlocks;
@@ -45,6 +46,8 @@ public class MagicOverhaul
 
         ModMenuTypes.register(modEventBus);
 
+        ModRecipes.register(modEventBus);
+
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
@@ -83,7 +86,7 @@ public class MagicOverhaul
         public static void onClientSetup(FMLClientSetupEvent event)
         {
             event.enqueueWork(() -> {
-                MenuScreens.register(ModMenuTypes.RUNE_EXTRACTOR_MENU.get(), RuneExtractorScreen::new);
+                MenuScreens.register(ModMenuTypes.RUNE_INSCRIBER_MENU.get(), RuneInscriberScreen::new);
                 MenuScreens.register(ModMenuTypes.SPELL_CAST_MENU.get(), SpellCastScreen::new);
                 // TODO: Add more later
             });

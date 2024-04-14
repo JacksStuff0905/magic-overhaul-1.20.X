@@ -2,10 +2,14 @@
   "item.magic_overhaul.debug_wand": "Debug Wand",
   "item.magic_overhaul.metal_detector": "Metal Detector",
 
+  "item.magic_overhaul.rune_template.prefix": "",
+  "item.magic_overhaul.rune_template.suffix": " Template",
   "item.magic_overhaul.rune.prefix": "",
   "item.magic_overhaul.rune.suffix": " Rune",
   "item.magic_overhaul.rune_acnar":"Acnar Rune",
+  "item.magic_overhaul.rune_template_acnar":"Acnar Rune Template",
   "item.magic_overhaul.rune_brimvyora":"Brimvyora Rune",
+  "item.magic_overhaul.rune_template_brimvyora":"Brimvyora Rune Template",
   "item.magic_overhaul.rune_cascaris":"Cascaris Rune",
   "item.magic_overhaul.rune_dusphor":"Dusphor Rune",
   "item.magic_overhaul.rune_ethelux":"Ethelux Rune",
@@ -21,7 +25,7 @@
   "item.magic_overhaul.rune_orred":"Orred Rune",
   "item.magic_overhaul.rune_parsinea":"Parsinea Rune",
 
-  "block.magic_overhaul.rune_extractor": "Rune Extractor",
+  "block.magic_overhaul.rune_inscriber": "Rune Inscriber",
 
   "block.magic_overhaul.test_block": "Test Block",
   "block.magic_overhaul.test_block_ore": "Test Block Ore",
@@ -31,11 +35,11 @@
 
   "creativetab.magic_tab": "Magic",
 
-  "gui.magic_overhaul.rune_extractor_screen": "Rune Extractor",
+  "gui.magic_overhaul.rune_inscriber_screen": "Rune Inscriber",
   "gui.magic_overhaul.spell_cast_screen.title": "Create a spell",
   "gui.magic_overhaul.spell_cast_screen.no_rune_inventory_tooltip": "is missing from the inventory",
 
-  "container.magic_overhaul.rune_extractor": "Rune Extractor",
+  "container.magic_overhaul.rune_inscriber": "Rune Inscriber",
 
 
 

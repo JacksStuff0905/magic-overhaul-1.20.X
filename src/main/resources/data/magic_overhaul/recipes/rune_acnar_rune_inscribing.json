@@ -1,0 +1,13 @@
+{
+  "type": "magic_overhaul:rune_inscribing",
+  "base": {
+    "item": "minecraft:stone"
+  },
+  "template": {
+    "item": "magic_overhaul:rune_template_acnar"
+  },
+  "output": {
+    "count": 1,
+    "item": "magic_overhaul:rune_acnar"
+  }
+}

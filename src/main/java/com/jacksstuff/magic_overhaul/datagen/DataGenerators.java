@@ -2,6 +2,8 @@ package com.jacksstuff.magic_overhaul.datagen;
 
 
 import com.jacksstuff.magic_overhaul.MagicOverhaul;
+import com.jacksstuff.magic_overhaul.item.custom.RuneItem;
+import com.jacksstuff.magic_overhaul.item.custom.RuneTemplateItem;
 import com.jacksstuff.magic_overhaul.spell.ModEffects;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
@@ -37,6 +39,7 @@ public class DataGenerators {
         //Rune generator
         new ModEffects();
         ModRuneTextureGenerator runeTextureGenerator = new ModRuneTextureGenerator("rune_background.png");
+        ModRuneTemplateTextureGenerator runeTemplateTextureGenerator = new ModRuneTemplateTextureGenerator("rune_template_background.png");
         RuneEffectCombinationGenerator combinationGenerator = new RuneEffectCombinationGenerator();
         RuneNameGenerator runeNameGenerator = new RuneNameGenerator();
     }

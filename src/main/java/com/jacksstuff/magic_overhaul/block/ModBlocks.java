@@ -1,8 +1,9 @@
-package net.jacksstuff.magicoverhaul.block;
+package com.jacksstuff.magic_overhaul.block;
 
-import net.jacksstuff.magicoverhaul.MagicOverhaul;
-import net.jacksstuff.magicoverhaul.block.custom.SoundBlock;
-import net.jacksstuff.magicoverhaul.item.ModItems;
+import com.jacksstuff.magic_overhaul.MagicOverhaul;
+import com.jacksstuff.magic_overhaul.block.custom.RuneInscriberBlock;
+import com.jacksstuff.magic_overhaul.block.custom.SoundBlock;
+import com.jacksstuff.magic_overhaul.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -31,6 +32,10 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> SOUND_BLOCK = registerBlock("sound_block",
             () -> new SoundBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+
+
+    public static final RegistryObject<Block> RUNE_INSCRIBER = registerBlock("rune_inscriber",
+            () -> new RuneInscriberBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

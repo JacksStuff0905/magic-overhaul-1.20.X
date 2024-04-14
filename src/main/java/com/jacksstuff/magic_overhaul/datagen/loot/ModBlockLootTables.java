@@ -1,7 +1,7 @@
-package net.jacksstuff.magicoverhaul.datagen.loot;
+package com.jacksstuff.magic_overhaul.datagen.loot;
 
-import net.jacksstuff.magicoverhaul.block.ModBlocks;
-import net.jacksstuff.magicoverhaul.item.ModItems;
+import com.jacksstuff.magic_overhaul.block.ModBlocks;
+import com.jacksstuff.magic_overhaul.item.ModItems;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
@@ -27,9 +27,13 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.TEST_BLOCK.get());
         this.dropSelf(ModBlocks.SOUND_BLOCK.get());
 
+        this.dropSelf(ModBlocks.RUNE_INSCRIBER.get());
+
 
         this.add(ModBlocks.TEST_BLOCK_ORE.get(),
                 block -> createCopperLikeOreDrops(ModBlocks.TEST_BLOCK_ORE.get(), ModItems.DEBUG_WAND.get()));
+
+
     }
 
 

@@ -26,7 +26,8 @@ public class ModCreativeModeTabs {
 
                 //Runes
                 ModItems.forEachRune(pOutput::accept);
-
+                //Rune templates
+                ModItems.forEachRuneTemplate(pOutput::accept);
 
                 //Blocks
                 pOutput.accept(ModBlocks.TEST_BLOCK.get());
@@ -35,7 +36,7 @@ public class ModCreativeModeTabs {
 
                 pOutput.accept(ModBlocks.SOUND_BLOCK.get());
 
-                pOutput.accept(ModBlocks.RUNE_EXTRACTOR.get());
+                pOutput.accept(ModBlocks.RUNE_INSCRIBER.get());
             })
             .build());
 

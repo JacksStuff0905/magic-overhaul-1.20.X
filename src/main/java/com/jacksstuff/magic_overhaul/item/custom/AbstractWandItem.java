@@ -42,7 +42,7 @@ public abstract class AbstractWandItem extends ActiveRunesProvider implements Me
     private IClientItemExtensions extension = new WandUseExtensionsAnim(() -> (float)getChargeDuration());
 
     public AbstractWandItem(Properties pProperties) {
-        super(pProperties);
+        super(pProperties.rarity(Rarity.EPIC));
     }
 
 

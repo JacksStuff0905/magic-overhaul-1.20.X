@@ -1,30 +1,22 @@
-package com.jacksstuff.magicoverhaul.screen;
+package com.jacksstuff.magic_overhaul.screen;
 
-import com.jacksstuff.magicoverhaul.MagicOverhaul;
-import com.jacksstuff.magicoverhaul.block.entity.RuneExtractorBlockEntity;
+import com.jacksstuff.magic_overhaul.MagicOverhaul;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.components.Tooltip;
-import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
-import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.client.gui.components.Button;
-import net.minecraftforge.client.event.TextureStitchEvent;
 
-public class RuneExtractorScreen extends AbstractContainerScreen<RuneExtractorMenu> {
+public class RuneInscriberScreen extends AbstractContainerScreen<RuneInscriberMenu> {
 
-    private static final Component TITLE = Component.translatable("gui." + MagicOverhaul.MOD_ID + ".rune_extractor_screen");
+    private static final Component TITLE = Component.translatable("gui." + MagicOverhaul.MOD_ID + ".rune_inscriber_screen.title");
     private static final Component TEST_BUTTON =
-            Component.translatable("gui." + MagicOverhaul.MOD_ID + ".rune_extractor_screen.button.test_button");
+            Component.translatable("gui." + MagicOverhaul.MOD_ID + ".rune_inscriber_screen.button.test_button");
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(MagicOverhaul.MOD_ID, "textures/gui/rune_extractor_gui.png");
+            new ResourceLocation(MagicOverhaul.MOD_ID, "textures/gui/rune_inscriber_gui.png");
 
 
-    public RuneExtractorScreen(RuneExtractorMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
+    public RuneInscriberScreen(RuneInscriberMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
 
         this.imageWidth = 176;
